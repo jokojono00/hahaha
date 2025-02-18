@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HBD Bang Koding Dari Micola</title>
+    <title>yeahhh udah besdayyy !!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -11,16 +11,16 @@
     />
   </head>
   <body
-    style="
-      background-image: url(https://images.unsplash.com/photo-1530273973427-22351773250c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    "
+    style="background-image: url(https://images.unsplash.com/photo-1530273973427-22351773250c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);"
     class="flex justify-center h-screen items-center"
   >
+    <audio src="hb.mp3" loop id="myAudio"></audio>
+
     <div
       class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8 w-80"
       id="kartu"
     >
-      <h1 class="text-3xl">Happy Birthday 19th</h1>
+      <h1 class="text-3xl">Special for you..</h1>
       <h1
         class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite"
       >
@@ -36,32 +36,155 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script>
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-      });
-      let kartu = document.getElementById("kartu");
+      let audio = document.getElementById("myAudio");
+
+      // Function to play music, show confetti, and change the card content
       function ubahKartu() {
-        kartu.innerHTML = `    <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
-      Selamat ulang tahun Nana,  
-      Semoga di usiamu yang baru ini, segala impianmu semakin dekat dan setiap langkahmu selalu diberkahi 
-      kebahagiaan dan kesuksesan. Terima kasih sudah menjadi pribadi yang terus semangat dan percaya diri. 
-      Jangan pernah berhenti bersinar dengan caramu sendiri! Nikmati hari spesialmu ini, ya!🎉🎂
-    </h1>
-    <h2 class="mt-3 animate__animated animate__fadeIn">
-      - Dari : Mas A. -
-    </h2>
-    <button
-      class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
-      onclick="refresh()"
-    >
-      Tutup
-    </button>
-    `;
+        // Play audio when button is clicked
+        audio.play();
+
+        // Trigger confetti animation
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+
+        // Change the content of the current card
+        let kartu = document.getElementById("kartu");
+        kartu.innerHTML = `
+          <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+            Selamat ulang tahun Nana,  
+            Semoga di usiamu yang baru segala impianmu semakin dekat dan setiap langkahmu selalu diberkahi 
+            kebahagiaan dan kesuksesan... aamin.. 🎉🎂
+          </h1>
+          <h2 class="mt-3 animate__animated animate__fadeIn">
+            - Dari : Mas A. -
+          </h2>
+          <div class="mt-3 mb-5">
+            <img src="g1.gif" alt="Happy Birthday GIF" class="w-48 mx-auto" />
+          </div>
+          <button
+            class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="ubahKartuSelanjutnya()"
+          >
+            Lanjutkan
+          </button>
+        `;
       }
-      function refresh() {
-        location.reload();
+
+      // Function to change to the next card with a GIF and show confetti
+      function ubahKartuSelanjutnya() {
+        // Trigger confetti animation when moving to the next card
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+
+        let kartu = document.getElementById("kartu");
+        kartu.innerHTML = `
+          <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+            Semoga kamu selalu diberikan kebahagiaan dan cinta yang tak terhingga! 
+            Semoga hari-harimu selalu dipenuhi dengan kebahagiaan dan kesuksesan, 
+            serta kelimpahan berkah. Semoga tahun ini lebih berwarna dan penuh kejutan manis! 
+            Teruslah menjadi inspirasi bagi orang-orang di sekitarmu, Nana. 🎉🎁
+          </h1>
+          <h2 class="mt-3 animate__animated animate__fadeIn">
+            - Dari : Mas A. -
+          </h2>
+          <div class="mt-3 mb-5">
+            <img src="g2.gif" alt="Inspiration GIF" class="w-48 mx-auto" />
+          </div>
+          <button
+            class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="ubahKartuSelanjutnyaLagi()"
+          >
+            Lanjutkan
+          </button>
+        `;
+      }
+
+      // Function for the next greeting page with GIF and confetti
+      function ubahKartuSelanjutnyaLagi() {
+        // Trigger confetti animation when moving to the next card
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+
+        let kartu = document.getElementById("kartu");
+        kartu.innerHTML = `
+          <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+            Selamat ulang tahun Nana! Terima kasih sudah menjadi pribadi yang terus semangat dan percaya diri. 
+            Jangan pernah berhenti bersinar dengan caramu sendiri! Nikmati hari spesialmu ini, ya! 🎂🎉🎈
+          </h1>
+          <h2 class="mt-3 animate__animated animate__fadeIn">
+            - Dari : Mas A. -
+          </h2>
+          <div class="mt-3 mb-5">
+            <img src="g3.gif" alt="Cake GIF" class="w-48 mx-auto" />
+          </div>
+          <button
+            class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="ubahKartuTerakhir()"
+          >
+            Lanjutkan
+          </button>
+        `;
+      }
+
+      // Function to show the final message with birthday cake GIF and confetti
+      function ubahKartuTerakhir() {
+        // Trigger confetti animation on the final card
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+
+        let kartu = document.getElementById("kartu");
+        kartu.innerHTML = `
+          <h1 class="font-semibold text-7xl text-pink-500 animate__animated animate__flash animate__infinite">
+            <span class="text-blue-500 text-6xl ">HAPPY 19 th!!!</span>
+          </h1>
+          <div class="mt-3 mb-5">
+            <img src="cake.gif" alt="Birthday Cake GIF" class="w-64 mx-auto animate__animated animate__pulse animate__infinite" />
+          </div>
+          <button
+            class="p-2 bg-red-600 text-white rounded mt-5 hover:bg-red-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="restartUcapans()"
+          >
+            Selesai
+          </button>
+        `;
+      }
+
+      // Function to restart and show the first greeting card again
+      function restartUcapans() {
+        // Trigger confetti animation when restarting the greeting
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+
+        let kartu = document.getElementById("kartu");
+        kartu.innerHTML = `
+          <h1 class="text-3xl">Happy Birthday 19th</h1>
+          <h1
+            class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite"
+          >
+            ERNAA
+          </h1>
+          <button
+            class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+            onclick="ubahKartu()"
+          >
+            Klik Disini Naa!
+          </button>
+        `;
       }
     </script>
   </body>
